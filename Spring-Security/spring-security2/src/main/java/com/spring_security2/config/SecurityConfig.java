@@ -22,4 +22,39 @@ public class SecurityConfig {
         return (SecurityFilterChain) http.build();
     }
 
+
+//    /**
+//     * Deny All request
+//     * As part of authorization the frontend would ask for credentials but would fail eventually
+//     */
+//    @Bean
+//    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+//        http.authorizeHttpRequests((requests) -> {
+//                requests.anyRequest().denyAll();
+//            })
+//            .formLogin(Customizer.withDefaults())
+//            .httpBasic(Customizer.withDefaults());
+//
+//        return (SecurityFilterChain) http.build();
+//    }
+
+
+//    /**
+//     * Allow All requests
+//     *
+//     */
+//    @Bean
+//    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+//        http.authorizeHttpRequests((requests) -> {
+//                requests.anyRequest().permitAll();
+//            })
+//            .formLogin(Customizer.withDefaults())
+//            .httpBasic(Customizer.withDefaults());
+//
+//        return (SecurityFilterChain) http.build();
+//    }
+
+
+
+
 }
