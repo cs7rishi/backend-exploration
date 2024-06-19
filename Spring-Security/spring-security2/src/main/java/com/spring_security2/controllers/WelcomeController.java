@@ -1,4 +1,4 @@
-package com.spring_security.controllers;
+package com.spring_security2.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WelcomeController {
 
-    @GetMapping("/welcome")
-    public String sayWelcome(){
-        return "Welcome to Spring Security with security";
+    @GetMapping("/hello")
+    public String sayHello(){
+        return "welcome";
     }
 }
