@@ -8,6 +8,8 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -27,23 +29,45 @@ public class SecurityConfig {
         return (SecurityFilterChain) http.build();
     }
 
+
+//    /**
+//     * Approch 1 use withDefaultPasswordEncoder
+//     */
+//    @Bean
+//    public InMemoryUserDetailsManager userDetailsService(){
+//        UserDetails admin = User.withDefaultPasswordEncoder()
+//            .username("admin")
+//            .password("admin")
+//            .authorities("admin")
+//            .build();
+//        UserDetails user = User.withDefaultPasswordEncoder()
+//            .username("user")
+//            .password("user")
+//            .authorities("read")
+//            .build();
+//
+//        return new InMemoryUserDetailsManager(admin,user);
+//    }
+
+    /**
+     * Approch 2 explicitly defining the password encoder
+     */
     @Bean
-    public InMemoryUserDetailsManager userDetailsService(){
+    public InMemoryUserDetailsManager userDetailsService() {
+        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
 
-        /**
-         * Approch 1 use withDefaultPasswordEncoder
-         */
-        UserDetails admin = User.withDefaultPasswordEncoder()
-            .username("admin")
-            .password("admin")
-            .authorities("admin")
-            .build();
-        UserDetails user = User.withDefaultPasswordEncoder()
-            .username("user")
-            .password("user")
-            .authorities("read")
-            .build();
+        UserDetails admin =
+            User.withUsername("admin").password("admin").authorities("admin").build();
+        UserDetails user = User.withUsername("user").password("user").authorities("read").build();
 
-        return new InMemoryUserDetailsManager(admin,user);
+        manager.createUser(admin);
+        manager.createUser(user);
+
+        return manager;
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return NoOpPasswordEncoder.getInstance();
     }
 }
