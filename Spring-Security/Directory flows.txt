@@ -1,1 +1,2 @@
 spring-security3: custom userDetailManager implementation
+spring-security4: password encoder exploration
