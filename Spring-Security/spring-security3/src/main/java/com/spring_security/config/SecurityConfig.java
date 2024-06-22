@@ -9,7 +9,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+
+import javax.sql.DataSource;
 
 @Configuration
 public class SecurityConfig {
@@ -50,18 +53,23 @@ public class SecurityConfig {
     /**
      * Approch 2 explicitly defining the password encoder
      */
+//    @Bean
+//    public InMemoryUserDetailsManager userDetailsService() {
+//        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
+//
+//        UserDetails admin =
+//            User.withUsername("admin").password("admin").authorities("admin").build();
+//        UserDetails user = User.withUsername("user").password("user").authorities("read").build();
+//
+//        manager.createUser(admin);
+//        manager.createUser(user);
+//
+//        return manager;
+//    }
+
     @Bean
-    public InMemoryUserDetailsManager userDetailsService() {
-        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-
-        UserDetails admin =
-            User.withUsername("admin").password("admin").authorities("admin").build();
-        UserDetails user = User.withUsername("user").password("user").authorities("read").build();
-
-        manager.createUser(admin);
-        manager.createUser(user);
-
-        return manager;
+    public JdbcUserDetailsManager userDetailsService(DataSource dataSource){
+        return new JdbcUserDetailsManager(dataSource);
     }
 
     @Bean
