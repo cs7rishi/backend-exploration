@@ -24,7 +24,7 @@ public class SecurityConfig {
             .authorizeHttpRequests((requests) -> {
             requests
                 .requestMatchers("/myaccount", "/mybalance", "/myloans", "/mycards").authenticated()
-                .requestMatchers("/notices", "/contact").permitAll();
+                .requestMatchers("/notices", "/contact","/register").permitAll();
         })
             .formLogin(Customizer.withDefaults())
             .httpBasic(Customizer.withDefaults());
@@ -69,10 +69,10 @@ public class SecurityConfig {
 //        return manager;
 //    }
 
-    @Bean
-    public JdbcUserDetailsManager userDetailsService(DataSource dataSource){
-        return new JdbcUserDetailsManager(dataSource);
-    }
+//    @Bean
+//    public JdbcUserDetailsManager userDetailsService(DataSource dataSource){
+//        return new JdbcUserDetailsManager(dataSource);
+//    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
