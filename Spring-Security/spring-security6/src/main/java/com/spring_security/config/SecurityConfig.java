@@ -1,5 +1,6 @@
 package com.spring_security.config;
 
+import com.spring_security.filter.CsrfCookieFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +14,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+import org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 
@@ -24,6 +28,9 @@ public class SecurityConfig {
 
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+        CsrfTokenRequestAttributeHandler requestHandler = new CsrfTokenRequestAttributeHandler();
+        requestHandler.setCsrfRequestAttributeName("_csrf");
+
         http
             .cors((cors) -> cors.configurationSource(new CorsConfigurationSource() {
                 @Override
@@ -37,7 +44,9 @@ public class SecurityConfig {
                     return config;
                 }
             }))
-            .csrf((csrf) -> csrf.disable())
+            .csrf((csrf) -> csrf.csrfTokenRequestHandler(requestHandler).ignoringRequestMatchers("/contact", "/register")
+                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
+            .addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
             .authorizeHttpRequests((requests) -> {
             requests
                 .requestMatchers("/myaccount", "/mybalance", "/myloans", "/mycards").authenticated()
