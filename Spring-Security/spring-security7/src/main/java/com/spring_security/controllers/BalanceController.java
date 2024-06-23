@@ -15,7 +15,7 @@ public class BalanceController {
     @Autowired
     private AccountTransactionsRepository accountTransactionsRepository;
 
-    @GetMapping("/myBalance")
+    @GetMapping("/mybalance")
     public List<AccountTransactions> getBalanceDetails(@RequestParam int id) {
         List<AccountTransactions> accountTransactions = accountTransactionsRepository.
                 findByCustomerIdOrderByTransactionDtDesc(id);
