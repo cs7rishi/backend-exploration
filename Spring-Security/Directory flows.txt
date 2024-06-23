@@ -1,3 +1,4 @@
 spring-security3: custom userDetailManager implementation
 spring-security4: password encoder exploration
 spring-security5: Don't want to utilize DaoAuthenticationProvide, so wrote custome authentication provider
+spring-security6: Explored CORS and CSRF
