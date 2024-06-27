@@ -13,7 +13,7 @@ public class AccountController {
     @Autowired
     private AccountsRepository accountsRepository;
 
-    @GetMapping("/myAccount")
+    @GetMapping("/myaccount")
     public Accounts getAccountDetails(@RequestParam int id) {
         Accounts accounts = accountsRepository.findByCustomerId(id);
         if (accounts != null ) {
