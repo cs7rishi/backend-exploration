@@ -36,8 +36,6 @@ public class EazyBankUserPwsAuthenticationProvider implements AuthenticationProv
         List<Customer> customerList = customerRepository.findByEmail(username);
         if (!customerList.isEmpty()) {
             if (passwordEncoder.matches(pwd, customerList.get(0).getPwd())) {
-//                List<GrantedAuthority> authorities = new ArrayList<>();
-//                authorities.add(new SimpleGrantedAuthority(customerList.get(0).getRole()));
                 return new UsernamePasswordAuthenticationToken(username, pwd, getGrantedAuthorties(customerList.get(0).getAuthorities()));
             } else {
                 throw new BadCredentialsException("Invalid credential");

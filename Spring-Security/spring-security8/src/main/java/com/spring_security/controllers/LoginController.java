@@ -43,7 +43,7 @@ public class LoginController {
         return response;
     }
 
-    @PostMapping("/user")
+    @GetMapping("/user")
     public Customer getUserDetailsAfterLogin(Authentication authentication) {
         List<Customer> customers = customerRepository.findByEmail(authentication.getName());
         if (customers.size() > 0) {
