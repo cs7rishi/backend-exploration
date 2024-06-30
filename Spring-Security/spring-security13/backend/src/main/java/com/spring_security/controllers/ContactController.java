@@ -1,10 +1,13 @@
 package com.spring_security.controllers;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import com.spring_security.entities.Contact;
 import com.spring_security.repository.ContactRepository;
+import com.spring_security.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,11 +20,18 @@ public class ContactController {
     @Autowired
     private ContactRepository contactRepository;
 
+    @Autowired
+    private CustomerRepository customerRepository;
+
     @PostMapping("/contact")
-    public Contact saveContactInquiryDetails(@RequestBody Contact contact) {
+    public List<Contact> saveContactInquiryDetails(@RequestBody List<Contact> contacts) {
+        Contact contact = contacts.get(0);
         contact.setContactId(getServiceReqNumber());
         contact.setCreateDt(new Date(System.currentTimeMillis()));
-        return contactRepository.save(contact);
+        contact = contactRepository.save(contact);
+        List<Contact> returnContacts = new ArrayList();
+        returnContacts.add(contact);
+        return returnContacts;
     }
 
     public String getServiceReqNumber() {
