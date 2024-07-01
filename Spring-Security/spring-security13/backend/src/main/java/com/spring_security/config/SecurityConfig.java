@@ -56,7 +56,7 @@ SecurityConfig {
             .authorizeHttpRequests((requests) -> {
                 requests
                     .requestMatchers("/myaccount", "/mybalance", "/myloans", "/mycards", "/user").authenticated()
-                    .requestMatchers("/notices", "/contact","/register").permitAll();})
+                    .requestMatchers("/notices", "/contact").permitAll();})
             .oauth2ResourceServer(oauth2ResourceServerCustomizer ->
                 oauth2ResourceServerCustomizer.jwt(jwtConfigurer -> jwtConfigurer.jwtAuthenticationConverter(jwtAuthenticationConverter)));
 
