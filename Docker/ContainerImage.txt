@@ -1,0 +1,4 @@
+What's is an Image ?
+
+
+docker container tag <original name / latest> <new Image name>

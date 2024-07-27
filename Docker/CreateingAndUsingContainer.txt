@@ -1,0 +1,145 @@
+Docker desktop include many internal tools:
+engine, cli , compose, buildKit, kubernetes, scan, sbom, & more
+
+
+3 major ways to run container
+-Locally (Docker Desktop)
+-Servers (Docker Enginer, K8s)
+-Paas (Cloud Run, Fargate)
+
+
+Docker Engine was the first way to run container
+OCI(Open Container Initiative) Continer Runtime
+
+OCI: Make images with any tool, any runtime tool can run it
+
+
+Docker Client:
+
+
+Docker Engine:
+
+
+
+Commands: 
+docker info :returns most config values of the engine
+docker : get the return of the list of Commands
+
+New Management commands:
+To organise the commands
+
+new : docker <command> <subcommand> (options)
+old : docker <command> (options)
+
+e.g
+new : docker container run
+old : docker run 
+
+
+
+Image vs Container
+> An Image is the application we want to run
+> A Conainer is an instance of that image running as a process
+> You can have many container running of the same image
+> Docker's default image "registry" is called Docker Hub
+# registry is similar to github for code 
+
+
+docker container run —publish 80:80 nginx
+1. Downloaded image 'nginx' from Docker Hub
+2. Started a new container from that image
+3. Opencd port 80 on thc host IP
+4. Routes that traffic to the container IPV port 80
+
+docker container run —publish 80:80 --detach nginx
+This will run container in background
+
+docker container ls : Shows running container
+docker container ls -a : Shows all container
+docker container run --publish 80:80 --detach --name docker_awesome nginx : Custome name for container
+docker container logs docker_awesome: get the logs of the container
+docker container top docker_awesome: Display the running processes of a container
+docker container rm : delete the container
+docker container rm -f 63f : delete the container forcefully
+
+$ Note always keep image name at the end
+
+>> What happens when we run container <<<
+
+What happens in 'docker container run'
+1.Looks for that image locally in image cache, doesn't find anything
+2.Then looks in remote image repository (defaults to Docker Hub)
+3.Downloads the latest version (nginx:latest by default)
+4.Creates new container based on that image and prepares to start
+5.Gives it a virtual IP on a private network inside docker engine
+6.Opens up port 80 on host and forwards to port 80 in container
+7.Starts container by using the CMD in the image Dockerfile
+
+>>>>>> Container vs VM <<<<<<
+>They are just processes
+>Limited to what resources they can access
+>Exit when process stops
+
+Note(for linux): ps command can show process run by root system and process listed in docker top could be found there
+Oops: the ps command I show here looks
+at the host, but Mac/Win Docker is
+running in a mini-VM, so if you want to
+run ps on those, you'll need to connect
+to the Docker VM itself. * *See resources
+in this Lecture for how to connect.**
+https://www.bretfisher.com/getting-a-shell-in-the-docker-for-windows-vm/
+
+
+What's Going On In Containers
+• docker container top - process list in one container
+• docker container inspect - details of one container config
+• docker container stats -performance stats for all containers
+
+
+Getting a Shell Inside Containers
+• docker container run -it start new container interactively
+• docker container exec -it - run additional command in existing
+container
+• Different Linux distros in containers
+
+
+::::::::: Docker Networks :::::::::::
+
+Docker Networks Defaults
+• Each container connected to a private virtual network "bridge"
+• Each virtual network routes through NAT firewall on host IP
+• All containers on a virtual network can talk to each other without -p
+• Best practice is to create a new virtual network for each app:
+• network for mv•sql and php/apache containers
+• network "mv_api" for mongo and nodejs containers
+
+Docker Networks Cont.
+• "Batteries Included, But Removable"
+• Defaults work well in many cases. but easy to swap out parts to customize it
+• Make new virtual networks
+• Attach containers to more then one virtual network (or none)
+• Skip virtual networks and use host IP (—net=host)
+• use different Docker network drivers to gain new abilities
+• and much more...
+
+
+Review of : docker container run -p 80:80
+
+Docker open a port 80 on host machine, and any incoming traffic on port 80, will be routed to that container
+If another container is run without -p and attached to the same container, the already running container can access that container
+But outcoming traffic could'nt access the new container ran without -p
+
+To get the running port for container
+cmd: docker container inspect --format "{{.NetworkSettings.IPAddress}}" <container>
+Port Check
+cmd: docker container port <container>
+
+
+Docker Networks: CLI Management
+• Show networks                     docker network Is
+• Inspect a network                 docker network inspect
+• Create a network                  docker network create - -driver
+• Attach a network to container     docker network connect
+• Detach a network from container   docker network disconnect
+
+
