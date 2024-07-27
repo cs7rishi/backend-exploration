@@ -1,4 +1,4 @@
-package strategy.paymentService1;
+package strategy.paymentService;
 
 public interface PaymentStrategy {
     void processPayment();
