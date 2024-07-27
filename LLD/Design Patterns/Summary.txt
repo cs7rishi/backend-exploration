@@ -1,17 +1,18 @@
-Strategy : 27/07/2024
-Observer
-Factory
-Command
-Decorator
-Singleton
-Abstract
-Proxy
-Template
-Bridge
-Iterator
-Adapter
-Facade
-Composite
+Strategy    : 27/07/2024
+Observer    : 28/07/2024
+Factory     : 27/07/2024
+Command     : 27/07/2024
+Decorator   : 27/07/2024
+Singleton   : 27/07/2024
+Abstract    : 27/07/2024
+Proxy       : 27/07/2024
+Template    : 27/07/2024
+Bridge      : 27/07/2024
+Iterator    : 27/07/2024
+Adapter     : 27/07/2024
+Facade      : 27/07/2024
+Composite   : 27/07/2024
 
 Behavioral Pattern:
 Strategy
+Observer
