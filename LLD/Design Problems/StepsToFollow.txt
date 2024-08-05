@@ -1,0 +1,5 @@
+1.Gather all requirement
+2.Create Use-Case Diagram
+3.Create Class Diagram
+4.Create Skeleton Code
+5.Complete Code Implementation
