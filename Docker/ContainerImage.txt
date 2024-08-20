@@ -1,4 +1,42 @@
-What's is an Image ?
+What's In An Image (And What Isn't)
+> App binaries and dependencies
+> Metadata about the image data and how to run the image
+> Official definition: "An Image is an ordered collection of root
+    filesystem changes and the corresponding execution parameters for
+    use within a container runtime."
+> Not a complete OS. No kernel, kernel modules (e.g. drivers). Uses host OS
 
 
-docker container tag <original name / latest> <new Image name>
+Image Layers:
+Docker make file changes in the form of layers, with each layer having its on SHA,
+helps in efficient utilizing of cached layers on the host machine
+
+> Image layers
+> union file system
+> history and inspect commands
+> copy on write
+
+Image and Their Layers: Review
+> Images are made up of file system changes and metadata
+> Each layer is uniquely identified and only stored once on a host
+> This saves storage space on host and transfer time on push/pull
+> A container is just a single read/write layer on top of image
+> docker image history and inspect commands can teach us
+
+
+Image Taggin and Pushing to Docker Hub
+Image Id vs Tags
+
+Docker Image Info: 
+<user>/<repo>:<tag>
+
+> Official Repositories
+  They live as the "root namespaces" of the registry, so they don't need account name
+  in front of repo name
+> Default tag is latest if not specified
+
+Use command docker login to log into docker hub
+Commands:
+docker login                                           //login into docker
+docker image tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG] //add new tag the source image
+docker image push [OPTIONS] NAME[:TAG]                 //push docker image to docker hub (by Default)
