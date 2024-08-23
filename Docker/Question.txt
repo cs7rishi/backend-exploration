@@ -1,0 +1,5 @@
+> How does logs works in Docker container?
+> Does Java deployment requires OS distributino ?
+> Importance of --init flag and alternatives ?
+> Tini is a wrapper that manages PID 1 and does zombie reaping (just google to read up on those Linux concepts).
+> What does prune command does ?

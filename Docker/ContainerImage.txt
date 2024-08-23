@@ -7,7 +7,8 @@ What's In An Image (And What Isn't)
 > Not a complete OS. No kernel, kernel modules (e.g. drivers). Uses host OS
 
 
-Image Layers:
+########### Image Layers ###############
+
 Docker make file changes in the form of layers, with each layer having its on SHA,
 helps in efficient utilizing of cached layers on the host machine
 
@@ -40,3 +41,15 @@ Commands:
 docker login                                           //login into docker
 docker image tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG] //add new tag the source image
 docker image push [OPTIONS] NAME[:TAG]                 //push docker image to docker hub (by Default)
+
+########## DockerFile ###############
+Commands reference: https://docs.docker.com/reference/dockerfile/
+
+FROM command is mainly to use the inner package manager, mostly used jessie
+
+File: dockerfile-sample-1 > DockerFile
+CMD: docker image build -t customenginx .   //builds the docker image from the Dockerfile present in the current directory
+
+It caches every command inside the DockerFile, so that when next build is run, it could be optimised.
+
+
