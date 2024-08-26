@@ -1,0 +1,18 @@
+Key Terms:
+
+Job / Project : Runnable tasks that contigctéd in Jenkins
+Node : Each machine 'haf pc.yf of Jenkiny grid.
+Executor : or slot for execution of „lobs
+Build Result got after executing a Job
+
+
+Difference between Item role and global role ?
+Creating global roles, such as admin, job creator, anonymous, etc., allowing to set Overall, Agent, Job, Run, View and SCM permissions on a global basis.
+Creating item roles, allowing to set item specific permissions (e.g Job, Run or Credentials) on Jobs, Pipelines and Folders.
+Creating agent roles, allowing to set agent specific permissions.
+
+Run Jenkins job Remotely
+Create a random authentication Token: w347293hskdjhfksjdh8ow7eyrwef
+Edit the url, and hit a get request through postman/browser
+Sample Url: JENKINS_URL/job/HelloWorld/build?token=TOKEN_NAME
+Exact Url: localhost:8005/job/HelloWorld/build?token=w347293hskdjhfksjdh8ow7eyrwef
