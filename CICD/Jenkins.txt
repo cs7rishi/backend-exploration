@@ -16,3 +16,10 @@ Create a random authentication Token: w347293hskdjhfksjdh8ow7eyrwef
 Edit the url, and hit a get request through postman/browser
 Sample Url: JENKINS_URL/job/HelloWorld/build?token=TOKEN_NAME
 Exact Url: localhost:8005/job/HelloWorld/build?token=w347293hskdjhfksjdh8ow7eyrwef
+
+$$$ PollSCM vs Git WebHook $$$$
+PollSCM we continously check in git for new checkIn Code
+Git Webhook, git informs jenkins when new code checkIn
+
+$$ NgRok &&
+Tunneling service
