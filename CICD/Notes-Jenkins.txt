@@ -23,3 +23,15 @@ Git Webhook, git informs jenkins when new code checkIn
 
 $$ NgRok &&
 Tunneling service
+
+Running Maven From Jenkins:
+In Build Step select: Invoke top level Maven targets
+
+Todo:
+Explore Dynamic Branch Value deployment
+Explore Maven Project build from Github
+
+Maven Goals
+Clean - Remove all the class files
+Test - Run testcase in the Project
+Package - Create a jar or war from the project
