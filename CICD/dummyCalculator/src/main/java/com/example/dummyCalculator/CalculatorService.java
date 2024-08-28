@@ -1,7 +1,14 @@
 package com.example.dummyCalculator;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class CalculatorService {
-    public static int square(int value){
+    public  int square(int value){
         return value * value;
+    }
+
+    public int cube(int value){
+        return value*value*value;
     }
 }

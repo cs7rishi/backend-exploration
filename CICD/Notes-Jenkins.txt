@@ -27,9 +27,20 @@ Tunneling service
 Running Maven From Jenkins:
 In Build Step select: Invoke top level Maven targets
 
+Using Maven plugin:
+Install Maven Integration plugin
+Create new job using Maven Project from the option
+
+Integrating SonarQube:
+Install SonarQube Scanner plugin
+
+Sending Email Notifications From Jenkins
+
+
 Todo:
 Explore Dynamic Branch Value deployment
 Explore Maven Project build from Github
+Not getting coverage in sonarqube
 
 Maven Goals
 Clean - Remove all the class files
