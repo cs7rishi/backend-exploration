@@ -1,0 +1,70 @@
+Java IO helping in reading/writing data from Media Source
+Media source can be File, Network, Memory Array
+Date can text, numeric or both
+Each kind of data is made up of bytes in memory
+
+Terms:
+Classic IO  -> java.io
+Java IO     -> All IO
+
+
+History:
+Year        Version             Package
+1996        Classic             java.io
+2002        New-IO(NIO)         java.nio
+2011        NEW-IO2(NiO.2)      java.nio
+
+
+Classic IO:
+1.File API
+2.Byte Stream: InputStream,OutputStream Data
+3.Character Stream: Reader, Writer
+4.Data Stream: RandomAccessFile
+5.Hybrid Stream: InputStreamReader, OutputStreamReader
+6.Serialization/Deserialization: Serialization, Externalizable
+
+UseCase
+2.Read/Write bytes of data
+3.Directly read/write text data
+4.Randomly access file content
+5.to read/write, mixed or hybrid data.
+6.serialization/deserialization of optic state.
+
+####### File API ########
+
+$$File Object$$
+
+What is file system?
+
+A file system is a system that controls how data is stored and retrieved.
+If we would not be having any file system on a computer,
+data placed in storage would be one large
+body of data with no way to tell where one piece of data stops and the next begins.
+
+This file object is a representation of a file or directory
+on the disk. And using this object, we can get access and
+control over the file.
+
+>Way to create File Object
+File file = new File("D:\\Learning\\GitHub\\backend-exploration\\Java\\File IO\\resources\\sampleText.txt");
+File file1 =
+        new File("D:\\Learning\\GitHub\\backend-exploration\\Java\\File IO\\resources\\","sampleText.txt");
+URI uri = new URI("");
+File file3 = new File(uri);
+
+Remember, this file object is just a representation of the file or directory on the disk.
+It does not actually have access to the file at the time of object creation.
+
+$$Working with File Object $$
+
+
+####### Byte Stream ########
+
+These streams are just continuous flow of data from a source to a destination.
+If you're reading from an external file using by streams, then the by stream is going to read the data
+bite by bite from.
+
+We can also take these bites in an array and then read multiple bites at
+once rather than reading a single by each time.
+
+
