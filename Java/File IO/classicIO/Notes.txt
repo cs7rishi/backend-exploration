@@ -70,6 +70,23 @@ once rather than reading a single by each time.
 FileInputStream/FileOutputStream used for read/write to files
 ByteArrayInputStream/ByteArrayOutputStream used for processing inMemory Data, ie. When you have a byte array containing data
 
+$$ Piped Stream $$
+Why we require pipedStream?
+We usually have two stream, and both are working on single thread, when inputStream is reading. the writing is stopped
+and vice versa.
+
+Solution: Poducer/Consumer Pattern
+1.Run the reading/writing operation on seperate thread.
+2.Have a way to communicate the data between both the threads.
+
+For Easy implementation we have PipedStream, with default buffer of 1024 bytes.
+PipedOutputStream is used to insert data
+PipeInputStream is used to read data.
+
+
+PipeOutPutStream    ----------------> PipedInputStream
+Write               -------1024-----> Read
+
 
 
 

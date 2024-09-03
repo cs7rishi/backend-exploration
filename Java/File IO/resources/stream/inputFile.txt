@@ -3,13 +3,3 @@ Hey, guys, welcome back.
 In this lecture, we are going to talk about in memory streams, basically about bite in Catrine and
 
 bite output's glasses.
-
-So just like we have fine in poetry and Frylock poetry as the concrete implementations to read and write
-
-for science.
-
-And just as I said, that we have different concrete implementations of input stream and output stream,
-
-depending upon the type of source and destination to read from or to write to an internal or in-memory
-
-byte array.
