@@ -67,4 +67,9 @@ bite by bite from.
 We can also take these bites in an array and then read multiple bites at
 once rather than reading a single by each time.
 
+FileInputStream/FileOutputStream used for read/write to files
+ByteArrayInputStream/ByteArrayOutputStream used for processing inMemory Data, ie. When you have a byte array containing data
+
+
+
 
