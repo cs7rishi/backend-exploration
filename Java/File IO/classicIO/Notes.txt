@@ -60,8 +60,8 @@ $$Working with File Object $$
 
 ####### Byte Stream ########
 
-These streams are just continuous flow of data from a source to a destination.
-If you're reading from an external file using by streams, then the by stream is going to read the data
+These bytestreams are just continuous flow of data from a source to a destination.
+If you're reading from an external file using by bytestreams, then the by stream is going to read the data
 bite by bite from.
 
 We can also take these bites in an array and then read multiple bites at
