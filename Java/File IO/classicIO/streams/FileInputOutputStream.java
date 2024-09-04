@@ -6,6 +6,8 @@ import java.io.*;
  * 2. Reading And Writing Through Byte Array (Buffer)
  * 3. Asking For Available Bytes
  * 4. Selecting The Read/Write Region Of Buffer
+ *
+ * Usually used with files
  */
 public class FileInputOutputStream {
     private static final File streamDir =

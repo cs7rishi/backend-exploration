@@ -5,7 +5,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 /**
- * Generally, we will be having bites on which we will be opening byteArrayInputStream
+ * Generally, we will be having bites on which we will be opening InputStream / Output Stream
+ * Used for inMemory bytes arrays
  */
 public class ByteArrayInputOutputStream {
     private static final String byteString = "Hi! I am learning";

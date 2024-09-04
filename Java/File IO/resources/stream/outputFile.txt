@@ -1,3 +1,5 @@
 Hey, guys, welcome back.
 
-In this lecture, we are going to 
+In this lecture, we are going to talk about in memory streams, basically about bite in Catrine and
+
+bite output's glasses.

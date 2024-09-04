@@ -3,7 +3,7 @@ package streams;
 import java.io.*;
 
 /**
- * Piped Stream allow to join input and output stream together
+ * Piped Stream allow to join input and output stream together, and run them simultaneously
  */
 public class PipedInputOutputStreams {
     private static final File inputFile = new File(

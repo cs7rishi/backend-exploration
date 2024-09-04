@@ -87,6 +87,9 @@ PipeInputStream is used to read data.
 PipeOutPutStream    ----------------> PipedInputStream
 Write               -------1024-----> Read
 
+$$ Filter Input/Output Stream $$
+Allows us to apply filter on the stream, uses underlying subclass method defination
+
 
 
 
