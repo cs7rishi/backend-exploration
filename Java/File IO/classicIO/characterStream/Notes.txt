@@ -63,3 +63,7 @@ $$$ Writer $$$
 > Supports mark and reset methods
 
 
+########## String Reader/Writer #############
+> Read/Write to java inMemory Java String
+> Flusing/Closing performs nothing, as its internal
+> StringWriter internally maintains a StringBuffer and utilizes append method
