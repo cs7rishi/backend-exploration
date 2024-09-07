@@ -17,7 +17,23 @@ public class FileReaderWriter {
         createResource();
         //readerWriterExample();
         //readerWriterWithTryWithResources();
-        readerWriterUsingBuffer();
+        //readerWriterUsingBuffer();
+        readerWriterUsingSkip();
+    }
+
+    private static void readerWriterUsingSkip() {
+        try (Reader reader = new FileReader(inputFile, StandardCharsets.UTF_8);
+            Writer writer = new FileWriter(outputFile, StandardCharsets.UTF_8);) {
+
+            char[] buffer = new char[1024];
+            reader.skip(26);
+            while (reader.read(buffer) != -1) {
+                writer.write(buffer);
+            }
+        } catch (IOException ex) {
+            System.out.println((ex.getMessage()));
+            System.out.println("Exception occured while reading/writing");
+        }
     }
 
     /**
@@ -86,7 +102,7 @@ public class FileReaderWriter {
     private static void createResource() {
         try {
             outputFile.delete();
-            Thread.sleep(5000);
+            Thread.sleep(2000);
             outputFile.createNewFile();
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
