@@ -1,3 +1,0 @@
-Hey, guys, welcome back.
-In this lecture, we are going to talk about in memory bytestreams, basically about bite in Catrine and
-bite output's glasses.
