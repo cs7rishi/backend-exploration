@@ -44,3 +44,22 @@ $$$ Encoding $$$
    / if 1110 is read, then 2 bytes need to be read for encoding
 
 
+$$$ File Reader $$$
+> File Reader does'nt support marking/resetting
+
+$$$ Writer $$$
+> In java 11, got the option to create a null Writer, on trying to close,
+  it does't throuw NullPointerException
+
+
+########### CharArrayReaderWriter ###########
+> Used for reading/writing inMemory Char Array
+> When we use char energy to get a stream of characters,
+  we don't need to maintain any internal char array to
+  hold the characters because the characters we are reading are
+  already present in this so char array on which we are creating the
+  reader or the characters stream.
+> Require initial position and length to write.
+> Supports mark and reset methods
+
+
