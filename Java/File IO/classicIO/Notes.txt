@@ -88,7 +88,15 @@ PipeOutPutStream    ----------------> PipedInputStream
 Write               -------1024-----> Read
 
 $$ Filter Input/Output Stream $$
-Allows us to apply filter on the stream, uses underlying subclass method defination
+A FilterInputStream contains some other input stream, which it uses as its basic source of data,
+possibly transforming the data along the way or providing additional functionality.
+
+Allows us to apply filter on the stream, uses underlying subclass method definition
+
+
+Deprecated:
+LineNumberInputStream
+StringBufferInputStream
 
 
 
