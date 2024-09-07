@@ -1,0 +1,46 @@
+####  Character Stream  ####
+Scores of character stream is a stream of characters.
+
+In Java 1.1 introduced to character stream and read/write data.
+
+Now, you would be thinking
+ then how we were reading writing text data before Jared 1.01.
+
+We have few method in the Java IO, for this conversion, but method
+did'nt account for character encodings.
+Character Encoding is one of the main reason for character stream.
+Like InputStream/Output Stream, we have Reader and Writer for character streams
+
+##### Charset and Character Encoding ######
+
+$$$$ Charset $$$$
+Charset: Set of character and symbols used by 1 or more language
+>Then that character set has allocated 100 numbers to represent
+ those characters, those hundred characters
+>We have so many cassettes available now,
+ ASCII character set covers, letters and symbols, mainly for
+ English text.
+
+>Then we have many extended ASCII sets.
+ What these does?
+ $ They include all the code points from asking for
+ compatibility with ASCII and then adds more letters
+ and symbols to represent some other languages.
+
+ $ And now the most latest one Unicode character set that
+ contains characters for most of the living languages
+ and scripts in the world.
+
+$$$ Encoding $$$
+> Encoding is the way these characters are stored in memory.
+> ASCII is character set, as well as encoding
+> ASCII uses 8 bytes to saves, which is 2^7
+> Character set has there own encoding rule
+> Unicode is Universal coded character set.
+  $ Unicode uses well know encoding, UTF-32, UTF-16, UTF-8
+  $ How UTF-8 works
+   / If it reads 1st byte as 0, it treat it as ASCII Encoding
+   / If it reads 1st byte as 1, read all continuous 1, meaning that bytes(8 bits) need to be read
+   / if 1110 is read, then 2 bytes need to be read for encoding
+
+
