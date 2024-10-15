@@ -1,0 +1,52 @@
+functional programming is a paradigm shift.
+
+In structured formate we worry about How to do?
+In functional Programming we worry about What to do ?
+
+
+How to convert into stream, use .stream against List
+How to put method reference, className::methodName, ex. FP01Functional::print
+
+Why use .reduce instead of plain loop, because of parallelStream support, multicore
+
+In Stream we have 2 type of Operation:
+Intermediate Operations: These operations return a new STREAM and can be chained together.
+    They are lazy, meaning they don't process the source until a terminal operation is invoked.
+
+    filter: Filters elements based on a predicate.
+    map: Transforms each element using a function.
+    flatMap: Flattens a stream of streams into a single stream.
+    distinct: Removes duplicate elements.
+    sorted: Sorts the elements in natural order or using a comparator.
+    peek: Performs an action on each element (primarily for debugging).
+    limit: Limits the number of elements in the stream.
+    skip: Skips the first n elements.
+    mapToInt: Converts elements to an IntStream.
+    mapToDouble: Converts elements to a DoubleStream.
+    mapToLong: Converts elements to a LongStream.
+
+Terminal Operations: These operations produce a non-stream result and terminate the stream processing.
+
+    forEach: Performs an action for each element.
+    collect: Collects elements into a collection or a summary result.
+    reduce: Combines elements into a single result using a binary operator.
+    count: Counts the number of elements in the stream.
+    anyMatch: Checks if any elements match a given predicate.
+    allMatch: Checks if all elements match a given predicate.
+    noneMatch: Checks if no elements match a given predicate.
+    findFirst: Returns the first element of the stream, if present.
+    findAny: Returns any element of the stream, if present.
+    toArray: Converts the stream into an array.
+    min: Finds the minimum element according to a comparator.
+    max: Finds the maximum element according to a comparator.
+    sum: Computes the sum of the elements (for numerical streams).
+    average: Computes the average of the elements (for numerical streams).
+
+
+Functional Interface:
+#Typically we pass data into a function, but we can pass a logic too
+#Conceptually, a functional interface has exactly one abstract method
+#Common Types of Functional Interface: Predicate, Consumer, and Function
+
+#Java did'nt want to break the old system, as java is object as first class, therefore lambda
+helps to pass the object of Interface type, to help implement functional programming
