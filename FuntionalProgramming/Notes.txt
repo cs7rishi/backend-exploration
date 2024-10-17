@@ -97,4 +97,7 @@ Example: ToDoubleFunction<Integer> intToDouble = i -> i.doubleValue();
 Description: Represents a function that takes an argument of type T and produces a long value.
 Example: ToLongFunction<Integer> intToLong = i -> i.longValue();
 
-
+#### Custom Class, Stream Operation ####
+allMatch: Returns whether all elements of this stream match the provided predicate.
+noneMatch: Returns whether no elements of this stream match the provided predicate.
+anyMatch: Returns whether any elements of this stream match the provided predicate.
