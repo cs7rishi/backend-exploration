@@ -1,3 +1,4 @@
+https://github.com/in28minutes/functional-programming-with-java/tree/master/src/programming
 functional programming is a paradigm shift.
 
 In structured formate we worry about How to do?
@@ -50,3 +51,50 @@ Functional Interface:
 
 #Java did'nt want to break the old system, as java is object as first class, therefore lambda
 helps to pass the object of Interface type, to help implement functional programming
+
+Common Functional Interfaces are:
+Predicate<T>
+Description: Represents a function that takes one argument and returns a boolean value. Often used for filtering or matching conditions.
+Example: Predicate<String> isEmpty = s -> s.isEmpty();
+
+2. Function<T, R>
+Description: Represents a function that accepts one argument of type T and produces a result of type R. It is often used for transformations.
+Example: Function<String, Integer> stringLength = s -> s.length();
+
+3. Consumer<T>
+Description: Represents an operation that accepts a single input argument and returns no result. It is typically used for operations that perform actions rather than returning a value.
+Example: Consumer<String> print = s -> System.out.println(s);
+
+4. Supplier<T>
+Description: Represents a supplier of results. It does not take any arguments but returns a value of type T. Used for generating or providing values.
+Example: Supplier<String> randomString = () -> UUID.randomUUID().toString();
+
+5. UnaryOperator<T>
+Description: Represents an operation on a single operand that produces a result of the same type. It’s a specialized form of Function.
+Example: UnaryOperator<Integer> square = x -> x * x;
+
+6. BinaryOperator<T>
+Description: Represents an operation that takes two operands of the same type and produces a result of the same type. It is a specialized form of BiFunction.
+Example: BinaryOperator<Integer> add = (a, b) -> a + b;
+
+7. BiPredicate<T, U>
+Description: Represents a function that takes two arguments and returns a boolean value. Useful for conditions that require two inputs.
+Example: BiPredicate<String, String> equalsIgnoreCase = (a, b) -> a.equalsIgnoreCase(b);
+
+8. BiFunction<T, U, R>
+Description: Represents a function that accepts two arguments of types T and U and produces a result of type R. Useful for operations involving two inputs.
+Example: BiFunction<Integer, Integer, Integer> multiply = (a, b) -> a * b;
+
+9. ToIntFunction<T>
+Description: Represents a function that takes an argument of type T and produces an int value.
+Example: ToIntFunction<String> stringToLength = s -> s.length();
+
+10. ToDoubleFunction<T>
+Description: Represents a function that takes an argument of type T and produces a double value.
+Example: ToDoubleFunction<Integer> intToDouble = i -> i.doubleValue();
+
+11. ToLongFunction<T>
+Description: Represents a function that takes an argument of type T and produces a long value.
+Example: ToLongFunction<Integer> intToLong = i -> i.longValue();
+
+
