@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Men's Slim Fit Jeans",
+    "description": "Stylish blue denim jeans with a slim fit design.",
+    "price": 49.99,
+    "quantity": 30,
+    "category": "Men",
+    "brand": "Levi's",
+    "size": ["S", "M", "L", "XL"],
+    "color": ["Blue", "Black", "Grey"],
+    "ratings": 4.5,
+    "dateAdded": "2025-02-10T12:00:00Z"
+  },
+  {
+    "name": "Women's Floral Summer Dress",
+    "description": "Lightweight and breathable floral dress, perfect for summer.",
+    "price": 39.99,
+    "quantity": 25,
+    "category": "Women",
+    "brand": "Zara",
+    "size": ["XS", "S", "M", "L"],
+    "color": ["Red", "Yellow", "White"],
+    "ratings": 4.7,
+    "dateAdded": "2025-02-12T15:30:00Z"
+  },
+  {
+    "name": "Men's Cotton T-Shirt",
+    "description": "Soft cotton T-shirt with round neck, available in multiple colors.",
+    "price": 19.99,
+    "quantity": 50,
+    "category": "Men",
+    "brand": "Nike",
+    "size": ["S", "M", "L", "XL", "XXL"],
+    "color": ["Black", "White", "Grey", "Navy Blue"],
+    "ratings": 4.6,
+    "dateAdded": "2025-02-14T08:45:00Z"
+  },
+  {
+    "name": "Women's High-Waisted Leggings",
+    "description": "Comfortable and stretchable high-waisted leggings, great for workouts.",
+    "price": 29.99,
+    "quantity": 40,
+    "category": "Women",
+    "brand": "Adidas",
+    "size": ["S", "M", "L", "XL"],
+    "color": ["Black", "Dark Green", "Burgundy"],
+    "ratings": 4.8,
+    "dateAdded": "2025-02-13T11:15:00Z"
+  },
+  {
+    "name": "Men's Formal Suit",
+    "description": "Classic two-piece formal suit, perfect for business meetings and events.",
+    "price": 199.99,
+    "quantity": 15,
+    "category": "Men",
+    "brand": "Raymond",
+    "size": ["M", "L", "XL"],
+    "color": ["Black", "Navy Blue", "Grey"],
+    "ratings": 4.9,
+    "dateAdded": "2025-02-09T14:20:00Z"
+  },
+  {
+    "name": "Women's Leather Jacket",
+    "description": "Premium leather jacket with a modern fit and zipper closure.",
+    "price": 129.99,
+    "quantity": 20,
+    "category": "Women",
+    "brand": "Gucci",
+    "size": ["S", "M", "L"],
+    "color": ["Black", "Brown"],
+    "ratings": 4.8,
+    "dateAdded": "2025-02-08T18:00:00Z"
+  }
+]
