@@ -2,10 +2,11 @@ package characterStream;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.time.Duration;
+import java.time.Instant;
 
 /**
- * Example of Read/Write from file
- * Used Buffer reading for performance optimization
+ * Example of Read/Write from file Used Buffer reading for performance optimization
  */
 public class FileReaderWriter {
     private static final String dir =
@@ -17,8 +18,8 @@ public class FileReaderWriter {
         createResource();
         //readerWriterExample();
         //readerWriterWithTryWithResources();
-        //readerWriterUsingBuffer();
-        readerWriterUsingSkip();
+        readerWriterUsingBuffer();
+        //readerWriterUsingSkip();
     }
 
     private static void readerWriterUsingSkip() {
@@ -37,8 +38,8 @@ public class FileReaderWriter {
     }
 
     /**
-     * This method utilized buffer array for reading/writing
-     * The buffer is not fully utilized in each iteration
+     * This method utilized buffer array for reading/writing The buffer is not fully utilized in
+     * each iteration
      */
     private static void readerWriterUsingBuffer() {
         try (Reader reader = new FileReader(inputFile, StandardCharsets.UTF_8);
@@ -46,9 +47,12 @@ public class FileReaderWriter {
 
             char[] buffer = new char[1024];
 
-            while(reader.read(buffer) != -1){
+            Instant start = Instant.now();
+            while (reader.read(buffer) != -1) {
                 writer.write(buffer);
             }
+            Instant end = Instant.now();
+            System.out.println(Duration.between(start, end).getNano());
         } catch (IOException ex) {
             System.out.println((ex.getMessage()));
             System.out.println("Exception occured while reading/writing");
@@ -102,9 +106,8 @@ public class FileReaderWriter {
     private static void createResource() {
         try {
             outputFile.delete();
-            Thread.sleep(2000);
             outputFile.createNewFile();
-        } catch (IOException | InterruptedException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }

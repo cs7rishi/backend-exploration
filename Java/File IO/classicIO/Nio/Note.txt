@@ -1,0 +1,99 @@
+####### NIO #########
+NIO IO is asynchronous
+>Blocking: Trigger operation and wait for response
+>Non Blocking: Trigger operation and let the operation call back
+
+*We use buffered reader/writer input/output..stream
+ Buffering happens in JVM Heap Memory which is controlled by the garbage collector
+ If file is large it would impact the performance of garbage collector
+
+*All the operations on Java IO APIs are synchronous and blocking operations.
+ In NIO, it's different, Here we have channels and buffers, and these new buffers
+ can reside in the heap memory of JVM, as well as in the off heap space.
+
+*The channel is where the data comes from.So a channel is connected
+ to a buffer.And on the other end, it is connected to some media,
+ like a file or a circuit, for instance.
+
+*A channel can read from buffer to medium or from medium to buffer. Nio Fig 2
+
+
+$$$$$ Channels $$$$$
+
+>Channel is an object that represents an open connection to a hardware device
+ like a File, a network socket and application component or
+ any other entity that is capable of performing read/write and other IO operation.
+>Similar to InputStream open on a file to read and outputStream open to write to file
+ We have Channels as gateway to access IO service
+ * NIO Channels are bidirectional, can be used for reading and writing both
+ * NIO does'nt deal with streaming data, only communicate with operating system based
+     IO services
+ * Channels uses byteBuffer as endpoint for sending receiving data.
+ * Channel is interface, supporting classes
+    a. FileChannel
+     > It has a cursor
+     > It allows for multiple read and write
+     > It is thread safe
+    b. DatagramChannel
+     > It supports multicast since its UDP and
+     > It supports multiple, non-concurrent reads and write
+    c. ServerSocketChannel
+    d. SocketChannel
+     > c and d for TCP Socket
+     > The socket channels supports asynchronous operations
+       and also support multiple non concurrent reads and writes.
+    All are abstract, the concrete implementation is hidden, as they
+    are different depending on the machine we are working on.
+
+    So to create instance of channel, we have factory methods
+
+$$$$$ Buffers $$$$$
+> A buffer is an object that stores fixed amount of data.
+> There is always a buffer standing between the application
+  and the channels that are going to write the data to the
+  servers or read the data from the service into the buffer.
+> Buffer is an abstract class, and extended by byte typeBuffer(Fig 4),
+  byteBuffer being the most important buffer, this is a one channel
+  can read from /write in. We convert the data to respective buffer type
+  and convert back to byteBuffer while writing to destination
+> Following buffer types are there
+    a. ByteBuffer
+    b. IntBuffer
+    c. DoubleBuffer
+    d. LongBuffer
+    e. ShortBuffer
+    f. FloatBuffer
+    g. CharBuffer
+  These are abstract class, and implementation is hidden, as implementation
+  is platform dependent, therefore factory methods are provided.
+
+> Buffer Object has 3 properties, capacity, limit and position. Nio Fig 6
+> Buffer supports 4 basic methods
+  * rewind: Clears the mark . resets the current position to O
+  * reset:  Clears the mark , resets the current position to previously set mark
+  * flip:   Set limit to current position , Clears the mark , resets the current position to O
+  * clear:  Clears the buffer
+> Whenever we create an object in Java, it gets created on the heap space.
+  But now we can have buffers in the central memory of Java, which is the heap space handled by garbage
+  collector, as well as in the off heap space, which is not handled by the garbage collector.
+  This is very useful to create a very large buffer, so the size of a buffer can be as large as gigabyte,
+
+> Non Direct ByteBuffer > Heap Space
+  Direct ByteBuffer     > Off-Heap Space > Large File > Efficient > Expensive
+
+$$$$ MappedByteBuffer $$$$
+> Used to create off heap in memory buffers
+> It is a buffer that maps a file to memory, consider a buffer that load a file inMemory
+  handles all the parts of your application that are reading from the same file again and again
+  will be much more efficient since the reading will take place in memory instead of taking place
+  on disk.
+> Mapped by buffer uses the underlying operating system for
+  direct file and memory mapping. Meaning you avoid large heaps and take advantage of operating systems.
+  Highly tuned in for best performance by just seeking the portion of the file to be operated on.
+
+
+
+
+
+
+

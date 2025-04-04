@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/model/user.model';
+import { src.User } from 'src/app/model/user.model';
 import { DashboardService } from '../../services/dashboard/dashboard.service';
 
 
@@ -10,7 +10,7 @@ import { DashboardService } from '../../services/dashboard/dashboard.service';
 })
 export class BalanceComponent implements OnInit {
 
-  user = new User();
+  user = new src.User();
   transactions = new Array();
 
   constructor(private dashboardService: DashboardService) { }

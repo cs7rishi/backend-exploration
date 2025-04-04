@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Loans } from 'src/app/model/loans.model';
-import { User } from 'src/app/model/user.model';
+import { src.User } from 'src/app/model/user.model';
 import { DashboardService } from '../../services/dashboard/dashboard.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { DashboardService } from '../../services/dashboard/dashboard.service';
 })
 export class LoansComponent implements OnInit {
 
-  user = new User();
+  user = new src.User();
   loans = new Array();
   currOutstandingBalance: number = 0;
 

@@ -1,5 +1,5 @@
 
-export class User{
+export class src.User{
 
   public id: number;
   public name: string;

@@ -1,0 +1,71 @@
+##### DFS #####
+TC: V^2
+
+Problems: ToDo
+Connected Components Problem in Matrix
+Number of Enclaves [flood fill implementation - multisource]
+
+Points:
+
+
+
+
+##### BFS #####
+TC: O(V+E)
+
+Points:
+If Distance is 1 between nodes, BFS could be used for shortest Distance
+
+
+Task:
+Check Why DFS is not used for O1 BFS Problem
+
+
+
+Note: take care of index n,m it should be n-1, m-1;
+
+
+###### Dijkstra Algorithm: #########
+
+Points:
+Does'nt work if the graph has -ve edge or -ve cycle
+From prioity, if the node is seen first time, its it shortest distance, don't reexplore
+
+Why PQ and not Queue ?
+Ans: you myt end up exploring the path which are not even shortest
+
+Queue could be used in case of uniform distance, or even BFS could be used
+
+
+###### BellmanFord ###########
+TC: V*E
+Single Source Shortest Path
+
+Points: 
+Relaxation should have achived by N-1, if not graph contains a -ve cycle;
+In disconnected graph, relaxation should not be performed from edge having INF dist;
+ 
+
+
+###### Minimum Spanning Tree #######
+
+$$$$$ Prims Algo $$$$$
+
+Step1: Take any node, push it with parent as -1 in PQ
+Step2: Peek from PQ, and explore the adjacent node
+
+Since we always add lowest weight neight to MSt, whateven node comes out PQ
+will obey this role, mark it as isVisited, and never visit again.
+Step3: Explore all the neigbour and populate again the PQ
+
+
+
+Notes: use pq as weight, node, parent is MST is required, else weight,node is enough;
+
+$$$$$ Kruskal Algo $$$$$
+
+Points:  Most Stones Removed with Same Row or Column
+Column could be considered as:
+col = row + col, giving all col a single entity, and row are also single entity
+
+Coordinate x,y is in code is col, row

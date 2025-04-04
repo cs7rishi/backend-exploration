@@ -1,0 +1,17 @@
+Why is Redis fast?
+1. All data is stored in memory
+2. Data is organized in simple data structures
+3. Redis has a simple feature set
+
+Numbers
+> Number is also considered as String inside Redis,
+> TypeCasting is required on fetching the value from application server
+> INCR DECR operation is important in Redis, as to avoid data inconsistency, which could occur
+    if GET and SET is used in concurrent request by user, and also avoid multiple round trip, 
+    to perform the same operation.
+    3 Possible Solution:
+     a. Use a Redis transaction with 'WATCH'
+     b. Use a lock
+     c. Use INCR
+
+# Redis process all commands synchronously - one at a time

@@ -67,3 +67,12 @@ $$$ Writer $$$
 > Read/Write to java inMemory Java String
 > Flusing/Closing performs nothing, as its internal
 > StringWriter internally maintains a StringBuffer and utilizes append method
+
+
+######### Buffered Reader/Writer #############
+> Used for performance
+> While reading, text is taken from the internal buffer rather than underlying character source
+  $ And when the buffer is full, then at the time of next invocation to the read call it again fills
+    up a larger block of data into the buffer.
+> Writer behaves similary, it writes to internal buffer, and persist the text, either when the buffer
+  is full, or explicitly flush is invoked

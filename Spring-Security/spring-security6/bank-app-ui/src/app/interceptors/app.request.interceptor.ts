@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpInterceptor,HttpRequest,HttpHandler,HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import {Router} from '@angular/router';
 import {tap} from 'rxjs/operators';
-import { User } from 'src/app/model/user.model';
+import { src.User } from 'src/app/model/user.model';
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
 
-  user = new User();
+  user = new src.User();
   constructor(private router: Router) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {

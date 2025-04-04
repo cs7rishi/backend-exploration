@@ -1,0 +1,25 @@
+1. Originator:
+> The object whose state needs to be saved and restored.
+> It creates a Memento containing the state to be saved and can restore its state from a Memento.
+
+2. Memento:
+> A simple object that stores the state of the Originator.
+> It does not perform operations on the state, ensuring encapsulation is maintained.
+
+3. Caretaker:
+> Manages the Memento objects.
+> It does not modify or access the content of Memento directly.
+
+
+Q. Why we created a caretaker class seperately ?
+The Caretaker class is created separately in the Memento Design Pattern to
+ensure proper separation of concerns and to manage the lifecycle of Memento
+objects independently of the Originator. Here's why it’s a good practice
+
+Q. why momento is not performing the undo funtionality
+on originator class, like setting the state of originator directly?
+A. Encapsulation and Information Hiding
+> The Memento pattern adheres to the encapsulation principle, ensuring that the internal state of the Originator is
+    not exposed or manipulated by external objects.
+> Only the Originator knows how to interpret and apply its state. If the Memento directly set the state,
+    it would break encapsulation, as Memento would need access to the internal workings of the Originator.

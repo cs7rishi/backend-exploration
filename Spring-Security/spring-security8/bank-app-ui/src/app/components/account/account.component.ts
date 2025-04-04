@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../services/dashboard/dashboard.service';
-import { User } from 'src/app/model/user.model';
+import { src.User } from 'src/app/model/user.model';
 import { Account } from 'src/app/model/account.model';
 
 @Component({
@@ -9,7 +9,7 @@ import { Account } from 'src/app/model/account.model';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit {
-  user = new User();
+  user = new src.User();
   account = new Account();
   constructor(private dashboardService: DashboardService) { }
 

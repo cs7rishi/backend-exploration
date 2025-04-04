@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login/login.service';
 import { Router } from '@angular/router';
-import { User } from 'src/app/model/user.model';
+import { src.User } from 'src/app/model/user.model';
 
 @Component({
   selector: 'app-logout',
@@ -10,7 +10,7 @@ import { User } from 'src/app/model/user.model';
 })
 export class LogoutComponent implements OnInit {
   
-  user = new User();
+  user = new src.User();
   constructor(private router : Router) { 
 
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cards } from 'src/app/model/cards.model';
-import { User } from 'src/app/model/user.model';
+import { src.User } from 'src/app/model/user.model';
 import { DashboardService } from '../../services/dashboard/dashboard.service';
 
 
@@ -11,7 +11,7 @@ import { DashboardService } from '../../services/dashboard/dashboard.service';
 })
 export class CardsComponent implements OnInit {
 
-  user = new User();
+  user = new src.User();
   cards = new Array();
   currOutstandingAmt:number = 0;
 

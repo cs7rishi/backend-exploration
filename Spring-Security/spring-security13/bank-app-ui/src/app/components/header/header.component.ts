@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/model/user.model';
+import { src.User } from 'src/app/model/user.model';
 import { KeycloakService } from 'keycloak-angular';
 import { KeycloakProfile } from 'keycloak-js';
 
@@ -10,7 +10,7 @@ import { KeycloakProfile } from 'keycloak-js';
 })
 export class HeaderComponent implements OnInit {
   
-  user = new User();
+  user = new src.User();
 
   public isLoggedIn = false;
   public userProfile: KeycloakProfile | null = null;
