@@ -1,4 +1,4 @@
-package builder.src.notificationSystem;
+package notificationSystem;
 
 public class Notification {
 

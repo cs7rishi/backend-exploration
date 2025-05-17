@@ -1,4 +1,4 @@
-package builder.src.pattern;
+package pattern;
 
 public class User {
 

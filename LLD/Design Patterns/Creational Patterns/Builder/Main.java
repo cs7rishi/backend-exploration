@@ -1,7 +1,5 @@
-package builder.src;
-
-import builder.src.notificationSystem.Notification;
-import builder.src.pattern.User;
+import notificationSystem.Notification;
+import pattern.User;
 
 public class Main {
 
