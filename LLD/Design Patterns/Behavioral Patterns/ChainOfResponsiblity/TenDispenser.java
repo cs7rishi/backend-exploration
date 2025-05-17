@@ -1,7 +1,5 @@
-package chainOfResponsiblity;
-
-public class TenHandler extends Dispenser {
-    TenHandler(Dispenser nextHandler) {
+public class TenDispenser extends Dispenser {
+    TenDispenser(Dispenser nextHandler) {
         super(nextHandler);
     }
     public void process(Integer amount){

@@ -1,5 +1,3 @@
-package chainOfResponsiblity;
-
 public class ThousandDispenser extends  Dispenser{
 
     ThousandDispenser(Dispenser nextHandler) {

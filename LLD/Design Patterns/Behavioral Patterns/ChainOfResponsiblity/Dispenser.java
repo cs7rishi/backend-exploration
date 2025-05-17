@@ -1,5 +1,3 @@
-package chainOfResponsiblity;
-
 public abstract class Dispenser {
     private Dispenser nextDispenser;
 
